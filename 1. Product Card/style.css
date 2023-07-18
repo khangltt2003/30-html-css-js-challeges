@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(194, 194, 194);
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 30px;
+    height: 520px;
+    width: 350px;
+    transition: 0.5s;
+    overflow-y: hidden;
+}
+
+.card:hover{
+    background-color: whitesmoke;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+i{
+    font-size: 2rem;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+.img-container{
+    transition: 0.5s;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.5s
+}
+
+.moving-part{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+.product-size,
+.product-color{
+    align-self: flex-start;
+}
+
+.product-size p{
+    font-size: 1.5rem;
+}
+
+.product-size p span{
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border: 2px solid black
+}
+
+.product-size p span:hover,
+.product-size p span:focus{
+    background-color: rgb(204, 204, 204)
+}
+
+.product-color p{
+    font-size: 1.5rem;
+}
+
+.product-color p span img{
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.button-container{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+button{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 30px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+
+}
+
+.card:hover .moving-part{
+    transform: translate(0, -100%);
+}
+
+.card:hover .img-container{
+    scale: 0.9;
+    transform: rotate(20deg);
+}
+
+.card:hover .product-name{
+    transform: translateX(-35%);
+}
+
+.card:hover .product-price{
+    transform: translateX(-290%);
+}
