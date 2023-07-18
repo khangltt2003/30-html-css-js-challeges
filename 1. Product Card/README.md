@@ -1,4 +1,4 @@
 This challege includes knowledges about relative position, abosolute position, overflow, transform, flex-box, etc.
 Our goal is to make animated product card that transform when hovering it.
-![alt text](/public/demo.png)
-![alt text](/public/demo1.png)
+![plot](./public/demo.png)
+![plot](./public/demo1.png)
