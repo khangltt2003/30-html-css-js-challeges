@@ -15,6 +15,8 @@ body{
     align-items: center;
     height: 100vh;
     background-color: rgb(194, 194, 194);
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -90,7 +92,7 @@ p{
     padding: 5px 10px;
     border: 2px solid black
 }
-
+.product-size p span:active,
 .product-size p span:hover,
 .product-size p span:focus{
     background-color: rgb(204, 204, 204)
@@ -105,6 +107,12 @@ p{
     width: 20px;
     border: 2px solid black;
     border-radius: 50%;
+}
+
+.product-color p span img:hover,
+.product-color p span img:active,
+.product-color p span img:focus{
+    border: 3px solid black;
 }
 
 .button-container{
