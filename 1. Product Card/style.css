@@ -70,6 +70,7 @@ p{
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    
 }
 
 .product-name,
@@ -150,10 +151,6 @@ button:hover{
     scale: 1.05;
 }
 
-.card:hover .moving-part{
-    transform: translate(0, -100%);
-}
-
 .card:hover .img-container{
     scale: 0.9;
     transform: rotate(20deg) translateY(-30px);
@@ -165,4 +162,7 @@ button:hover{
 
 .card:hover .product-price{
     transform: translateX(-290%);
+}
+.card:hover .moving-part{
+    transform: translate(0, -100%);
 }
