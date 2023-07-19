@@ -55,6 +55,7 @@ i:hover{
 
 .img-container{
     transition: 0.5s;
+    transform: translateY(40px);
 }
 
 img{
@@ -67,7 +68,12 @@ p{
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-    transition: 0.5s
+}
+
+.product-name,
+.product-price{
+    transition: 0.5s;
+    transform: translateY(40px);
 }
 
 .moving-part{
@@ -96,7 +102,8 @@ p{
 .product-size p span:active,
 .product-size p span:hover,
 .product-size p span:focus{
-    background-color: rgb(219, 219, 219)
+    background-color: rgb(219, 219, 219);
+    cursor: pointer;
 }
 
 .product-color p{
@@ -114,6 +121,7 @@ p{
 .product-color p span img:active,
 .product-color p span img:focus{
     border: 3px solid black;
+    cursor: pointer;
 }
 
 .button-container{
@@ -124,7 +132,7 @@ p{
 
 button{
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 30px;
     padding: 5px 10px;
     font-weight: bold;
@@ -146,7 +154,7 @@ button:hover{
 
 .card:hover .img-container{
     scale: 0.9;
-    transform: rotate(20deg);
+    transform: rotate(20deg) translateY(-30px);
 }
 
 .card:hover .product-name{
