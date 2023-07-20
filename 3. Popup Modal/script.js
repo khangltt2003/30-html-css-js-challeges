@@ -1,23 +1,16 @@
 const openButton = document.querySelector(".openButton");
 const closeButtons = document.querySelectorAll(".closeButton")
-const popUp = document.querySelector(".popup");
+const modal = document.querySelector(".modal");
 const body = document.querySelector("body")
 
+function toggleModal(){
+    modal.classList.toggle("hidden");
+}
 
-openButton.addEventListener("click", ()=>openModal())
+openButton.addEventListener("click", toggleModal)
+
+// body.addEventListener("click", toggleModal)
 
 closeButtons.forEach((button)=>{
-    button.addEventListener("click", ()=>closeModal())
+    button.addEventListener("click", toggleModal)
 })
-
-function openModal(){
-    popUp.style.top = "10%";
-    body.style.backgroundColor = "#e66464a";
-}
-
-function closeModal(){
-    popUp.style.top = "-40%";
-    body.style.backgroundColor = "#e66465";
-
-}
-

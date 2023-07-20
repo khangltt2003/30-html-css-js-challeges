@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --primary-color: #e66465;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -8,50 +12,79 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background: linear-gradient(90deg, #e66465, #9198e5);
+    background: linear-gradient(90deg, var(--primary-color), #9198e5);
     position: relative;
 }
 
-body button{
+body .openButton{
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px 20px;
     font-weight: bold;
     transition: 0.5s;
-}
-
-body button:hover{
-    background-color: #e66465;
-}
-
-.popup{
     position: absolute;
-    top: -40%;
-    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: transparent;
+}
+
+body .openButton:hover{
+    background-color: var(--primary-color);
+}
+
+/* position fixed to cover button */
+.modal{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.238);
+    z-index: 100;
+}
+
+.inner-modal{
+    position: absolute;
+    left:50%;
+    top: 10%;
+    transform: translate(-50%, 0);
     border-radius: 5px;
     background-color: white;
     width: 400px;
     height:200px;
-    overflow: hidden;
     z-index: 1000;
-    transition: 0.5;
+    animation: modalShow 0.2s linear;
+}
+
+@keyframes modalShow{
+    from{
+        top: -200px;
+        opacity: 0;
+    }
+    to{
+        top: 10%;
+        opacity: 1;
+    }
+}
+
+.hidden{
+    display: none;
 }
 
 .header{
-    background-color: #e66465;
+    background-color: var(--primary-color);
     padding: 10px 10px;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 
 i{
     font-size: 2rem;
     transition: 0.5s;
     padding: 2px;
+    color: white;
 }
 i:hover{
     background-color: #c75656;
@@ -64,21 +97,22 @@ i:hover{
 }
 
 .body h3{
-    color: #e66465
+    color: var(--primary-color)
 }
 
 .body button{
     position: absolute;
     top: 140%;
     left: 84%;
-    border: 2px solid #e66465;
+    border: 2px solid var(--primary-color);
     border-radius: 15px;
     padding: 5px 10px;
     background-color: transparent;
     transition: 0.5s;
+    color: var(--primary-color)
 }
 
 .body button:hover{
-    background-color: #e66465;
+    background-color: var(--primary-color);
     color: white;
 }
