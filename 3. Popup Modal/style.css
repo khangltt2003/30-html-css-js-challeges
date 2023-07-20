@@ -18,17 +18,16 @@ body{
 }
 
 body .openButton{
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: bold;
-    transition: 0.5s;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
     background-color: transparent;
+    transition: 0.5s;
 }
 
 body .openButton:hover{
@@ -36,7 +35,7 @@ body .openButton:hover{
 }
 
 /* position fixed to cover button */
-.modal{
+.popup-container{
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -44,7 +43,11 @@ body .openButton:hover{
     z-index: 100;
 }
 
-.inner-modal{
+.hidden{
+    display: none;
+}
+
+.popup{
     position: absolute;
     left:50%;
     top: 10%;
@@ -68,11 +71,7 @@ body .openButton:hover{
     }
 }
 
-.hidden{
-    display: none;
-}
-
-.header{
+.popup-header{
     background-color: var(--primary-color);
     padding: 10px 10px;
     display: flex;
@@ -81,38 +80,39 @@ body .openButton:hover{
 }
 
 i{
+    color: white;
     font-size: 2rem;
     transition: 0.5s;
     padding: 2px;
-    color: white;
 }
 i:hover{
     background-color: #c75656;
 }
 
-.body{
+.popup-body{
+    padding: 2px;
     background-color: white;
     padding: 10px 10px;
     position: relative;
 }
 
-.body h3{
+.popup-body h3{
     color: var(--primary-color)
 }
 
-.body button{
+.popup-body .closeButton{
     position: absolute;
     top: 140%;
-    left: 84%;
+    left: 82%;
+    padding: 5px 10px;
     border: 2px solid var(--primary-color);
     border-radius: 15px;
-    padding: 5px 10px;
     background-color: transparent;
+    color: var(--primary-color);
     transition: 0.5s;
-    color: var(--primary-color)
 }
 
-.body button:hover{
-    background-color: var(--primary-color);
+.popup-body .closeButton:hover{
     color: white;
+    background-color: var(--primary-color);
 }

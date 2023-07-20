@@ -1,6 +1,6 @@
 const openButton = document.querySelector(".openButton");
 const closeButtons = document.querySelectorAll(".closeButton")
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".popup-container");
 const body = document.querySelector("body")
 
 function toggleModal(){
@@ -10,6 +10,8 @@ function toggleModal(){
 openButton.addEventListener("click", toggleModal)
 
 modal.addEventListener("click", (e)=>{
+    console.log("e.target", e.target);
+    console.log("e.currentTarget", e.currentTarget);
     if(e.target === e.currentTarget){
         toggleModal();
     }
