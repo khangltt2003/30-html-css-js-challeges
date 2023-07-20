@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #e66465, #9198e5);
+    position: relative;
+}
+
+body button{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+body button:hover{
+    background-color: #e66465;
+}
+
+.popup{
+    position: absolute;
+    top: -40%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 400px;
+    height:200px;
+    overflow: hidden;
+    z-index: 1000;
+    transition: 0.5;
+}
+
+.header{
+    background-color: #e66465;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i{
+    font-size: 2rem;
+    transition: 0.5s;
+    padding: 2px;
+}
+i:hover{
+    background-color: #c75656;
+}
+
+.body{
+    background-color: white;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.body h3{
+    color: #e66465
+}
+
+.body button{
+    position: absolute;
+    top: 140%;
+    left: 84%;
+    border: 2px solid #e66465;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.body button:hover{
+    background-color: #e66465;
+    color: white;
+}
