@@ -9,7 +9,11 @@ function toggleModal(){
 
 openButton.addEventListener("click", toggleModal)
 
-// body.addEventListener("click", toggleModal)
+modal.addEventListener("click", (e)=>{
+    if(e.target === e.currentTarget){
+        toggleModal();
+    }
+})
 
 closeButtons.forEach((button)=>{
     button.addEventListener("click", toggleModal)
