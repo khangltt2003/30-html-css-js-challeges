@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/4. Image Gallery/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <title>Gallery Images</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="image">
-            <img src="/4. Image Gallery/public/images/dalat.png" alt="">
+            <img class="dalat" src="/4. Image Gallery/public/images/dalat.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/danang.png" alt="">
+            <img class="danang" src="/4. Image Gallery/public/images/danang.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/hagiang.png" alt="">
+            <img class="hagiang" src="/4. Image Gallery/public/images/hagiang.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/halongbay.png" alt="">
+            <img class="halongbay" src="/4. Image Gallery/public/images/halongbay.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/ninhbinh.png" alt="">
+            <img class="ninhbinh" src="/4. Image Gallery/public/images/ninhbinh.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/sapa.png" alt="">
+            <img class="sapa" src="/4. Image Gallery/public/images/sapa.png" alt="">
         </div>
         <div class="image">
-            <img src="/4. Image Gallery/public/images/phongnha.png" alt="">
+            <img class="phongnha" src="/4. Image Gallery/public/images/phongnha.png" alt="">
         </div>
-        <div class="image">
-            <img src="/4. Image Gallery/public/images/hoian.png" alt="">
+        <div class="image hoian">
+            <img class="hoian" src="/4. Image Gallery/public/images/hoian.png" alt="">
         </div>
     </div>
+    <div class="gallery hidden">
+        <i class='bx bx-left-arrow previous'></i>
+        <div class="gallery-img">
+            <img src="/4. Image Gallery/public/images/danang.png" alt="">
+        </div>
+        <i class='bx bx-right-arrow next'></i>
+    </div>
 </body>
+<script src="/4. Image Gallery/script.js"></script>
 </html>

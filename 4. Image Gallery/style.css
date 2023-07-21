@@ -24,13 +24,51 @@ body{
     
 }
 
-img{
+.image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
 
-img:hover{
+.image img:hover{
     scale: 1.2;
+}
+
+.gallery{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.603);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+.gallery-img{
+    width: 1000px;
+    height: 600px;
+    box-shadow: 0 0 1rem rgba(0,0,0,.6);
+    overflow: hidden;
+}
+
+.gallery-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery i{
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.gallery i:hover{
+    color: white;
+}
+
+.hidden{
+    display: none;
 }
