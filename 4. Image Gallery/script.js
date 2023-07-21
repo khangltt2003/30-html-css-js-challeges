@@ -29,14 +29,14 @@ images.forEach((image, index)=>{
 previousButton.addEventListener('click', ()=>{
     currentIndex -= 1;
     if(currentIndex < 0){
-        currentIndex = 7;
+        currentIndex = images.length-1;
     }
     renderImage(currentIndex);
 })
 
 nextButton.addEventListener('click', ()=>{
     currentIndex += 1;
-    if(currentIndex > 7){
+    if(currentIndex > images.length-1){
         currentIndex = 0;
     }
     renderImage(currentIndex);
