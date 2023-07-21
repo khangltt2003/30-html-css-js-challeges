@@ -17,9 +17,24 @@ function renderImage(index){
     galleryImage.setAttribute('src', imageSource)
 }
 
+function nextImage(){
+    currentIndex +=1;
+    if(currentIndex > imgArr.length - 1){
+        currentIndex = 0;
+    }
+    renderImage(currentIndex);
+}
+
+function previousImage(){
+    currentIndex -= 1;
+    if(currentIndex < 0){
+        currentIndex = images.length-1;
+    }
+    renderImage(currentIndex);
+}
+
 images.forEach((image, index)=>{
-    image.addEventListener('click', (e)=>{
-        console.log(index)
+    image.addEventListener('click', ()=>{
         currentIndex = index
         renderImage(currentIndex);
         toggleGallery();
@@ -27,25 +42,25 @@ images.forEach((image, index)=>{
 })
 
 previousButton.addEventListener('click', ()=>{
-    currentIndex -= 1;
-    if(currentIndex < 0){
-        currentIndex = images.length-1;
-    }
-    renderImage(currentIndex);
+    previousImage();
 })
 
 nextButton.addEventListener('click', ()=>{
-    currentIndex += 1;
-    if(currentIndex > images.length-1){
-        currentIndex = 0;
-    }
-    renderImage(currentIndex);
+    nextImage()
 })
 
 closeButton.addEventListener("click", toggleGallery);
 
 document.querySelector("body").addEventListener('keydown',(e)=>{
-    if(e.key === "Escape" && gallery.classList.contains("show")){
-        toggleGallery()
+    if(gallery.classList.contains("show")){
+        if(e.key === "Escape"){
+            toggleGallery();
+        }
+        else if(e.key === "ArrowLeft"){
+            previousImage();
+        }
+        else if(e.key === "ArrowRight"){
+            nextImage();
+        }
     }
 })
