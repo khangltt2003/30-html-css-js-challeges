@@ -1,15 +1,13 @@
-const images = document.querySelectorAll("img");
+const images = document.querySelectorAll(".image img");
 const nextButton = document.querySelector('.next')
 const previousButton = document.querySelector('.previous')
 const galleryImage = document.querySelector(".gallery-img img")
-
-const imgArr = ['dalat', 'danang', 'hagiang', 'halongbay', 'hoian', 'ninhbinh', 'phongnha', 'sapa']
+const gallery = document.querySelector('.gallery');
+const imgArr = ['dalat', 'danang', 'hagiang', 'halongbay','ninhbinh', 'sapa','phongnha', 'hoian']
 
 let currentIndex = 0;
 
-function toggleGallery(imageName){
-    let imageSource = "/4. Image Gallery/public/images/" + imageName + ".png"
-    galleryImage.setAttribute('src', imageSource)
+function toggleGallery(){
     document.querySelector('.gallery').classList.toggle('hidden');
 }
 
@@ -20,7 +18,9 @@ function renderImage(index){
 
 images.forEach((image)=>{
     image.addEventListener('click', (e)=>{
-        toggleGallery(e.target.classList[0]);
+        currentIndex = imgArr.indexOf(e.target.classList[0]);
+        renderImage(currentIndex);
+        toggleGallery();
     })
 })
 
@@ -37,6 +37,17 @@ nextButton.addEventListener('click', ()=>{
     if(currentIndex > 7){
         currentIndex = 0;
     }
-    console.log(currentIndex);
     renderImage(currentIndex);
+})
+
+gallery.addEventListener("click",(e)=>{
+    if(e.target === e.currentTarget){
+        toggleGallery();
+    }
+})
+
+document.querySelector("body").addEventListener('keydown',(e)=>{
+    if(e.key === "Escape" && !gallery.classList.contains("hidden")){
+        toggleGallery()
+    }
 })
