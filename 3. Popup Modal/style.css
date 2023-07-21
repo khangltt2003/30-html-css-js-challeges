@@ -12,19 +12,18 @@
 }
 
 body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background: linear-gradient(90deg, var(--primary-color), #9198e5);
     position: relative;
 }
 
 body .openButton{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
     border: 1px solid black;
     border-radius: 5px;
+    padding: 10px 20px;
     font-weight: bold;
     background-color: transparent;
     transition: 0.5s;
@@ -34,7 +33,7 @@ body .openButton:hover{
     background-color: var(--primary-color);
 }
 
-/* position fixed to cover button */
+/* blur screen when modal poping up  */
 .popup-container{
     position: fixed;
     height: 100vh;
@@ -57,6 +56,7 @@ body .openButton:hover{
     width: 400px;
     height:200px;
     z-index: 1000;
+    /* appear animation */
     animation: modalShow 0.2s linear;
 }
 
@@ -85,12 +85,12 @@ i{
     transition: 0.5s;
     padding: 2px;
 }
+
 i:hover{
     background-color: #c75656;
 }
 
 .popup-body{
-    padding: 2px;
     background-color: white;
     padding: 10px 10px;
     position: relative;
@@ -104,15 +104,15 @@ i:hover{
     position: absolute;
     top: 140%;
     left: 82%;
-    padding: 5px 10px;
     border: 2px solid var(--primary-color);
     border-radius: 15px;
+    padding: 5px 10px;
     background-color: transparent;
     color: var(--primary-color);
     transition: 0.5s;
 }
 
 .popup-body .closeButton:hover{
-    color: white;
     background-color: var(--primary-color);
+    color: white;
 }
