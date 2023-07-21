@@ -3,12 +3,13 @@ const nextButton = document.querySelector('.next')
 const previousButton = document.querySelector('.previous')
 const galleryImage = document.querySelector(".gallery-img img")
 const gallery = document.querySelector('.gallery');
+const closeButton = document.querySelector(".closeButton");
 const imgArr = ['dalat', 'danang', 'hagiang', 'halongbay','ninhbinh', 'sapa','phongnha', 'hoian']
 
 let currentIndex = 0;
 
 function toggleGallery(){
-    document.querySelector('.gallery').classList.toggle('hidden');
+    gallery.classList.toggle('show');
 }
 
 function renderImage(index){
@@ -16,9 +17,10 @@ function renderImage(index){
     galleryImage.setAttribute('src', imageSource)
 }
 
-images.forEach((image)=>{
+images.forEach((image, index)=>{
     image.addEventListener('click', (e)=>{
-        currentIndex = imgArr.indexOf(e.target.classList[0]);
+        console.log(index)
+        currentIndex = index
         renderImage(currentIndex);
         toggleGallery();
     })
@@ -40,14 +42,10 @@ nextButton.addEventListener('click', ()=>{
     renderImage(currentIndex);
 })
 
-gallery.addEventListener("click",(e)=>{
-    if(e.target === e.currentTarget){
-        toggleGallery();
-    }
-})
+closeButton.addEventListener("click", toggleGallery);
 
 document.querySelector("body").addEventListener('keydown',(e)=>{
-    if(e.key === "Escape" && !gallery.classList.contains("hidden")){
+    if(e.key === "Escape" && gallery.classList.contains("show")){
         toggleGallery()
     }
 })
