@@ -35,6 +35,7 @@ body{
     scale: 1.2;
 }
 
+/* scale = 0  */
 .gallery{
     position: fixed;
     width: 100vw;
@@ -72,8 +73,6 @@ body{
     width: 100%;
     height: 100%;
 }
-
-
 
 .gallery i{
     font-size: 2rem;
