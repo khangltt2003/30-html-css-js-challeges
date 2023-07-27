@@ -7,6 +7,5 @@ function renderPage(e) {
 }
 
 document.addEventListener("keydown", (e) => {
-  document.querySelector(".starter").classList.add("hide");
   renderPage(e);
 });
