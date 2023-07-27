@@ -116,11 +116,4 @@ small {
   left: 5px;
   color: red;
   z-index: 1;
-  display: none;
-}
-
-.empty-input .error-empty,
-.no-match .error-match,
-.invalid-email .error-invalid {
-  display: unset;
 }
