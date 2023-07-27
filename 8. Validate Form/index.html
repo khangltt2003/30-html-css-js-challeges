@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
     <title>Validate Form</title>
   </head>
   <body>
     <div class="container">
       <h1>Register</h1>
-      <div class="username-container">
+      <div class="input-container username-container">
         <input
           id="userName"
           type="text"
@@ -19,29 +23,31 @@
         <small class="error-empty">Username is required</small>
       </div>
 
-      <div class="email-container">
+      <div class="input-container email-container">
         <input type="text" class="email" placeholder="Email" required="true" />
         <small class="error-empty">Email is required</small>
         <small class="error-invalid">Invalid email</small>
       </div>
 
-      <div class="password-container">
+      <div class="input-container password-container">
         <input type="password" class="password" placeholder="Password" />
         <small class="error-empty">Password is required.</small>
         <small class="error-match">Password does not match</small>
+        <i class="bx bx-low-vision" onclick="showPassword()"></i>
       </div>
 
-      <div class="c-password-container">
+      <div class="input-container c-password-container">
         <input
           type="password"
           class="confirm-password"
           placeholder="Confirm Password"
         />
+        <i class="bx bx-low-vision" onclick="showPassword()"></i>
         <small class="error-empty">Confirm password is required</small>
         <small class="error-match">Password does not match</small>
       </div>
-      <button class="submit-button">Log in</button>
-      <p>Already a member? <a href="">Signup</a></p>
+      <button class="submit-button">Sign Up</button>
+      <p>Already a member? <a href="">Log In</a></p>
     </div>
   </body>
   <script src="./script.js"></script>

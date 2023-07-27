@@ -70,6 +70,24 @@ function validateForm() {
   let validPassword = isValidPassword(password, password2);
 
   if (validEmail && validPassword && validUsername) {
-    console.log("success");
+    document.querySelector("body").classList.add("success");
+  } else {
+    document.querySelector("body").classList.add("fail");
   }
+  setTimeout(() => {
+    document
+      .querySelector("body")
+      .classList.remove(document.querySelector("body").classList)[
+      document.querySelector("body").classList.length - 1
+    ];
+  }, 2000);
+}
+
+function showPassword() {
+  passwordInput.setAttribute("type", "text");
+  confirmPasswordInput.setAttribute("type", "text");
+  setTimeout(() => {
+    passwordInput.setAttribute("type", "password");
+    confirmPasswordInput.setAttribute("type", "password");
+  }, 1000);
 }
