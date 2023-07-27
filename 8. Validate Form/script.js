@@ -5,6 +5,7 @@ const confirmPasswordInput = document.querySelector(".confirm-password");
 
 const submitButton = document.querySelector(".submit-button");
 
+//remove error message when user types new input
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", () => {
     if (input.parentElement.classList.length > 1) {
@@ -13,10 +14,12 @@ document.querySelectorAll("input").forEach((input) => {
   });
 });
 
+//start validation when user presses submit
 submitButton.addEventListener("click", () => {
   validateForm();
 });
 
+//check if username input empty
 function isValidUsername(username) {
   if (username === "") {
     usernameInput.parentElement.classList.add("empty-input");
@@ -25,9 +28,10 @@ function isValidUsername(username) {
   return true;
 }
 
+//check if email input is empty and email is valid using regEx
 function isValidEmail(email) {
   let valid = true;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //regEx
   if (email === "") {
     emailInput.parentElement.classList.add("empty-input");
     valid = false;
@@ -40,6 +44,7 @@ function isValidEmail(email) {
   return valid;
 }
 
+//check if password input is empty and 2 password match
 function isValidPassword(password, password2) {
   let valid = true;
   if (password === "") {
@@ -59,6 +64,7 @@ function isValidPassword(password, password2) {
   return valid;
 }
 
+//validation, change body's backgroundImage when user success and fail
 function validateForm() {
   const username = usernameInput.value.trim();
   const email = emailInput.value.trim();
@@ -83,6 +89,7 @@ function validateForm() {
   }, 2000);
 }
 
+//show password when user clicks click show password icon
 function showPassword() {
   passwordInput.setAttribute("type", "text");
   confirmPasswordInput.setAttribute("type", "text");
