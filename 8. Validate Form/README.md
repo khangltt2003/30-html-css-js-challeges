@@ -5,6 +5,6 @@ The goal is to make a sign up form that checks empty input, valid email, matched
 <img src="./images/demoError.png" width="1000px"  />
 <img src="./images/checkEmptyInputdemo.png" width="1000px"  />
 <img src="./images/checkEmaildemo.png" width="1000px"  />
-<img src="./images/checkMatchPassworddemp.png.png" width="1000px"  />
+<img src="./images/checkMatchPassworddemp.png" width="1000px"  />
 <img src="./images/showPassworddemo.png" width="1000px"  />
 
