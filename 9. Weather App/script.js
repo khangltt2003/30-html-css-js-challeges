@@ -14,7 +14,9 @@ async function renderUI(city) {
   const data = await fetch(URL).then((res) => res.json());
   if (data.cod !== "404") {
     place.innerText = data.name;
-    time.innerText = new Date().toLocaleString();
+    setInterval(() => {
+      time.innerText = new Date().toLocaleString();
+    }, 1000);
     temperature.innerText = data.main.temp + " °C";
     weather.innerText = data.weather[0].main;
     vision.innerText = data.visibility + " m";
