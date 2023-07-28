@@ -20,15 +20,18 @@ p {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   border: 2px solid black;
-  gap: 30px;
-  padding: 10px 30px;
   background-color: rgba(255, 255, 255, 0.503);
+  box-shadow: 0 0 5px 2px black;
+  padding: 10px 20px;
   border-radius: 30px;
+  height: 110px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.show {
+  height: 450px;
 }
 
 .search-box {
@@ -36,13 +39,16 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px auto;
 }
 
 .search-box input {
   padding: 10px 20px;
   outline: none;
   border: 4px solid black;
-  border-radius: 10px 0 10px 0;
+  box-shadow: 2px 2px 5px 1px black;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .search-box i {
@@ -50,17 +56,32 @@ p {
   font-weight: bolder;
 }
 
+.location {
+  text-align: center;
+}
+
 .time {
   font-size: 1rem;
+  margin-bottom: 20px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .temperature {
-  padding: 40px 50px;
+  padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   box-shadow: 0 0 5px 5px black;
   font-size: 2rem;
   font-weight: bold;
+  margin: 20px auto;
+  text-align: center;
+  width: 70%;
+}
+
+.weather {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .detail-container {
@@ -68,6 +89,7 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .detail-container div {

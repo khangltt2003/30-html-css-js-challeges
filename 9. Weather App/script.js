@@ -15,14 +15,21 @@ async function renderUI(city) {
   if (data.cod !== "404") {
     place.innerText = data.name;
     time.innerText = new Date().toLocaleString();
-    temperature.innerText = data.main.temp + " C";
+    temperature.innerText = data.main.temp + " °C";
     weather.innerText = data.weather[0].main;
     vision.innerText = data.visibility + " m";
     humidty.innerText = data.main.humidity + "km/h";
     windSpeed.innerText = data.wind.speed + "%";
+    document.querySelector(".container").classList.add("show");
   }
 }
 
 searchButton.addEventListener("click", () => {
   renderUI(input.value);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    renderUI(input.value);
+  }
 });
