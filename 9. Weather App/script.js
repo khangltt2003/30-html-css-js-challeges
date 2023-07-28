@@ -9,6 +9,8 @@ const vision = document.querySelector(".vision p");
 const humidty = document.querySelector(".humidity p");
 const windSpeed = document.querySelector(".wind-speed p");
 
+input.focus();
+
 async function renderUI(city) {
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   const data = await fetch(URL).then((res) => res.json());
@@ -24,6 +26,8 @@ async function renderUI(city) {
     windSpeed.innerText = data.wind.speed + "%";
     document.querySelector(".container").classList.add("show");
   }
+  input.value = "";
+  input.focus();
 }
 
 searchButton.addEventListener("click", () => {
