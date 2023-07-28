@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./images/windy.png) no-repeat center/cover;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  gap: 30px;
+  padding: 10px 30px;
+  background-color: yellow;
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 10px 20px;
+  outline: none;
+  border: 4px solid black;
+  border-radius: 10px 0 10px 0;
+}
+
+.search-box i {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.time {
+  font-size: 1rem;
+}
+
+.temperature {
+  padding: 40px 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.detail-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.detail-container div {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.detail-container div p {
+  font-size: 1.2rem;
+}
