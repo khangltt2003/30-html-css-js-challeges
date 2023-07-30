@@ -37,15 +37,13 @@ button {
 .message-list {
   position: fixed;
   top: 5%;
-  right: 5%;
+  right: 1%;
   width: 250px;
 }
 
 .message-list div {
-  display: block;
-  right: -200%;
   margin-bottom: 20px;
-  padding: 10px 20px;
+  padding: 10px;
   text-align: center;
   color: white;
   font-size: 1.2rem;

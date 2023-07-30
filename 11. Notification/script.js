@@ -8,7 +8,7 @@ function showMessage(message, type) {
   var messageElement = document.createElement(`div`);
   messageElement.classList.add(type);
   messageElement.innerHTML = message;
-  messageList.prepend(messageElement);
+  messageList.prepend(messageElement); //prepend - add an element before the first element
   setTimeout(() => {
     messageList.removeChild(messageElement);
   }, 7000);
