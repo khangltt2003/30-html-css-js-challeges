@@ -5,7 +5,7 @@ const mainImg = document.querySelector(".slide-show img");
 
 //default
 let lastImg = document.querySelector("ul li");
-let currentIndex = 0;
+let prev = 0;
 mainImg.setAttribute("src", "./images/danang.png");
 
 //update UI with new element passed;
@@ -16,9 +16,9 @@ function updateUI(index) {
   lastImg = imgList[index]; //set last img to current img
 }
 
-function slideTransition(newIndex, currentIndex) {
+function slideTransition(newIndex, prevIndex) {
   //side left when new image's index > current img's index
-  if (newIndex > currentIndex) {
+  if (newIndex > prevIndex) {
     mainImg.style.animation = "slideLeftOut 0.2s forwards";
     setTimeout(() => {
       updateUI(newIndex);
@@ -26,28 +26,34 @@ function slideTransition(newIndex, currentIndex) {
     }, 200);
   }
   //side right when new image's index < current img's index
-  else if (newIndex < currentIndex) {
+  else if (newIndex < prevIndex) {
     mainImg.style.animation = "slideRightOut 0.2s forwards";
     setTimeout(() => {
       updateUI(newIndex);
       mainImg.style.animation = "slideRightIn 0.2s forwards";
     }, 200);
   }
+  prev = newIndex;
 }
 
 imgList.forEach((img, index) => {
   img.addEventListener("click", (e) => {
-    slideTransition(index, currentIndex);
-    currentIndex = index; //assign current index with index
+    slideTransition(index, prev);
   });
 });
 
 prevButton.addEventListener("click", () => {
-  if (currentIndex < 0) currentIndex = imgList.length - 1;
-  slideTransition(currentIndex--, currentIndex);
+  if (prev - 1 < 0) {
+    slideTransition(imgList.length - 1, 0);
+  } else {
+    slideTransition(prev - 1, prev);
+  }
 });
 
 nextButton.addEventListener("click", () => {
-  if (currentIndex > imgList.length - 1) currentIndex = 0;
-  slideTransition(currentIndex++, currentIndex);
+  if (prev + 1 > imgList.length - 1) {
+    slideTransition(0, imgList.length - 1);
+  } else {
+    slideTransition(prev + 1, prev);
+  }
 });
