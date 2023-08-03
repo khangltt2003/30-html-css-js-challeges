@@ -18,7 +18,19 @@ function updateUI(newImg) {
 
 imgList.forEach((img, index) => {
   img.addEventListener("click", (e) => {
-    updateUI(img);
+    if (index > currentIndex) {
+      mainImg.style.animation = "slideLeftOut 0.2s forwards";
+      setTimeout(() => {
+        updateUI(img);
+        mainImg.style.animation = "slideLeftIn 0.2s forwards";
+      }, 200);
+    } else if (index < currentIndex) {
+      mainImg.style.animation = "slideRightOut 0.2s forwards";
+      setTimeout(() => {
+        updateUI(img);
+        mainImg.style.animation = "slideRightIn 0.2s forwards";
+      }, 200);
+    }
     currentIndex = index; //assign current index with index
   });
 });
