@@ -8,6 +8,7 @@ let lastImg = document.querySelector("ul li");
 let currentIndex = 0;
 mainImg.setAttribute("src", "./images/danang.png");
 
+//update UI with new element passed;
 function updateUI(newImg) {
   lastImg.classList.remove("highlight"); //remove highlight of prev img
   newImg.classList.add("highlight"); //add highlight to curr img
@@ -15,9 +16,9 @@ function updateUI(newImg) {
   lastImg = newImg; //set last img to current img
 }
 
-imgList.forEach((li, index) => {
-  li.addEventListener("click", (e) => {
-    updateUI(li);
+imgList.forEach((img, index) => {
+  img.addEventListener("click", (e) => {
+    updateUI(img);
     currentIndex = index; //assign current index with index
   });
 });
