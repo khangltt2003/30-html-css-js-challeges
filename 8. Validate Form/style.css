@@ -16,41 +16,29 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(
-    135deg,
-    rgb(159, 32, 206),
-    rgb(105, 40, 234)
-  );
+  background-image: linear-gradient(145deg, rgb(159, 32, 206), rgb(105, 40, 234));
 }
 
 .success {
-  background-image: linear-gradient(
-    135deg,
-    rgb(53, 193, 25),
-    rgb(34, 189, 174)
-  );
+  background-image: linear-gradient(135deg, rgb(53, 193, 25), rgb(34, 189, 174));
 }
 
 .fail {
-  background-image: linear-gradient(
-    135deg,
-    rgb(193, 131, 25),
-    rgb(217, 79, 24)
-  );
+  background-image: linear-gradient(135deg, rgb(193, 131, 25), rgb(217, 79, 24));
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   background-color: white;
   border-radius: 15px;
   width: 350px;
   padding: 20px;
 }
 
-.container div {
+.container .input-container {
   width: 100%;
   position: relative;
 }
@@ -74,13 +62,15 @@ input {
   transition: 0.5s;
 }
 
+/* when input inside input-container is focused, change before element */
 .input-container:focus-within::before {
   width: 100%;
 }
 
 i {
   position: absolute;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0%;
   font-size: 1.5rem;
   font-weight: bolder;
@@ -110,7 +100,7 @@ a:hover {
   color: blueviolet;
 }
 
-small {
+.error-message {
   position: absolute;
   top: 100%;
   left: 5px;

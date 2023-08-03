@@ -79,10 +79,9 @@ function isValidPassword(passwordInput, password2Input) {
   return isValid;
 }
 
-function showError(element, message) {
-  let parent = element.parentElement;
-  let errorMessage = parent.querySelector("small");
-  errorMessage.innerText = message;
+//track element's parent element then track message error and chage its message
+function showError(targetElement, message) {
+  targetElement.parentElement.querySelector(".error-message").innerText = message;
 }
 
 //show password when user clicks click show password icon
@@ -100,9 +99,9 @@ submitButton.addEventListener("click", () => {
   validateForm();
 });
 
-//remove error message when user types new input
+//remove error message when user starts to type new input
 document.querySelectorAll("input").forEach((input) => {
   input.addEventListener("input", () => {
-    input.parentElement.querySelector("small").innerText = "";
+    input.parentElement.querySelector(".error-message").innerText = "";
   });
 });

@@ -14,6 +14,7 @@ input.focus();
 async function renderUI(city) {
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   const data = await fetch(URL).then((res) => res.json());
+  console.log(data);
   if (data.cod !== "404") {
     place.innerText = data.name;
     setInterval(() => {

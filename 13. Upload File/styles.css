@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(90deg, rgb(164, 7, 96), rgb(197, 0, 0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 30%;
+  height: 50%;
+  border: 5px dashed white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container i {
+  color: rgba(255, 255, 255, 0.578);
+  font-size: 300px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

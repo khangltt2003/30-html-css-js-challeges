@@ -56,7 +56,6 @@ button {
   position: absolute;
   top: 100%;
   left: 0%;
-  width: 0%;
   height: 5px;
   animation: countDown 7s;
 }
@@ -85,18 +84,6 @@ button {
   background-color: rgb(137, 0, 0);
 }
 
-@keyframes countDown {
-  0% {
-    width: 100%;
-  }
-  80% {
-    width: 0%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-
 @keyframes showMessage {
   0% {
     right: -200%;
@@ -112,5 +99,14 @@ button {
   }
   100% {
     right: -200%;
+  }
+}
+
+@keyframes countDown {
+  10% {
+    width: 100%;
+  }
+  80% {
+    width: 0%;
   }
 }

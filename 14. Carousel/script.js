@@ -26,11 +26,19 @@ imgList.forEach((img, index) => {
 prevButton.addEventListener("click", () => {
   currentIndex--;
   if (currentIndex < 0) currentIndex = imgList.length - 1;
-  updateUI(imgList[currentIndex]);
+  mainImg.style.animation = "slideLeftOut 0.2s forwards";
+  setTimeout(() => {
+    updateUI(imgList[currentIndex]);
+    mainImg.style.animation = "slideLeftIn 0.2s forwards";
+  }, 200);
 });
 
 nextButton.addEventListener("click", () => {
   currentIndex++;
   if (currentIndex > imgList.length - 1) currentIndex = 0;
-  updateUI(imgList[currentIndex]);
+  mainImg.style.animation = "slideRightOut 0.2s forwards";
+  setTimeout(() => {
+    updateUI(imgList[currentIndex]);
+    mainImg.style.animation = "slideRightIn 0.2s forwards";
+  }, 200);
 });

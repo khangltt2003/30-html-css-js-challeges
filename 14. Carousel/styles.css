@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .slide-show {
@@ -37,6 +38,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .bx-right-arrow-alt {
@@ -59,4 +61,40 @@ ul li img {
 
 .highlight {
   background-color: rgb(206, 2, 2);
+}
+
+@keyframes slideLeftOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideLeftIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

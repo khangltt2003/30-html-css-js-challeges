@@ -13,36 +13,29 @@
   <body>
     <div class="container">
       <h1>Register</h1>
+
       <div class="input-container username-container">
-        <input
-          id="userName"
-          type="text"
-          class="username"
-          placeholder="Username"
-        />
-        <small></small>
+        <input id="userName" type="text" class="username" placeholder="Username" />
+        <small class="error-message"></small>
       </div>
 
       <div class="input-container email-container">
         <input type="text" class="email" placeholder="Email" required="true" />
-        <small></small>
+        <small class="error-message"></small>
       </div>
 
       <div class="input-container password-container">
         <input type="password" class="password" placeholder="Password" />
-        <small></small>
+        <small class="error-message"></small>
         <i class="bx bx-low-vision" onclick="showPassword()"></i>
       </div>
 
       <div class="input-container c-password-container">
-        <input
-          type="password"
-          class="confirm-password"
-          placeholder="Confirm Password"
-        />
+        <input type="password" class="confirm-password" placeholder="Confirm Password" />
         <i class="bx bx-low-vision" onclick="showPassword()"></i>
-        <small></small>
+        <small class="error-message"></small>
       </div>
+
       <button class="submit-button">Sign Up</button>
       <p>Already a member? <a href="">Log In</a></p>
     </div>

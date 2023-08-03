@@ -15,12 +15,12 @@ function render() {
   items = "";
   todos.map((todo) => {
     items += `<li>
-      <label>
-        <input type="checkbox" />
-        <span>${todo.title}</span>
-      </label>
-      <i class="bx bx-trash" onClick="deleteItem(${todo._id})"></i>
-    </li>`;
+                <label>
+                  <input type="checkbox" />
+                  <span>${todo.title}</span>
+                </label>
+                <i class="bx bx-trash" onClick="deleteItem(${todo._id})"></i>
+              </li>`;
   });
   document.querySelector(".list").innerHTML = items;
   input.focus();
