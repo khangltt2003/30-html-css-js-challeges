@@ -8,36 +8,28 @@ let lastImg = document.querySelector("ul li");
 let currentIndex = 0;
 mainImg.setAttribute("src", "./images/danang.png");
 
-//change main img
-function changeMainImg(src) {
-  mainImg.src = src;
-}
-
-//highlight focused img and unhighlight previous img
-function highlightImg(newImg) {
-  lastImg.classList.remove("highlight");
-  newImg.classList.add("highlight");
-  lastImg = newImg;
+function updateUI(newImg) {
+  lastImg.classList.remove("highlight"); //remove highlight of prev img
+  newImg.classList.add("highlight"); //add highlight to curr img
+  mainImg.src = newImg.querySelector("img").src; //set main img src to src curr img src
+  lastImg = newImg; //set last img to current img
 }
 
 imgList.forEach((li, index) => {
   li.addEventListener("click", (e) => {
-    changeMainImg(e.target.src);
-    highlightImg(li);
-    currentIndex = index;
+    updateUI(li);
+    currentIndex = index; //assign current index with index
   });
 });
 
 prevButton.addEventListener("click", () => {
   currentIndex--;
-  if (currentIndex < 0) currentIndex = 5;
-  changeMainImg(imgList[currentIndex].querySelector("img").src);
-  highlightImg(imgList[currentIndex]);
+  if (currentIndex < 0) currentIndex = imgList.length - 1;
+  updateUI(imgList[currentIndex]);
 });
 
 nextButton.addEventListener("click", () => {
   currentIndex++;
-  if (currentIndex > 5) currentIndex = 0;
-  changeMainImg(imgList[currentIndex].querySelector("img").src);
-  highlightImg(imgList[currentIndex]);
+  if (currentIndex > imgList.length - 1) currentIndex = 0;
+  updateUI(imgList[currentIndex]);
 });
