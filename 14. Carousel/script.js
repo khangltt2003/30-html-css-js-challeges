@@ -4,8 +4,8 @@ const nextButton = document.querySelector(".bx-right-arrow-alt");
 const mainImg = document.querySelector(".slide-show img");
 
 //default
-let lastImg = document.querySelector("ul li");
 let prev = 0;
+let lastImg = document.querySelector("ul li");
 mainImg.setAttribute("src", "./images/danang.png");
 
 //update UI with new element passed;
