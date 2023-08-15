@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 5px 5px rgb(115, 115, 115);
+  padding: 10px 20px;
+  width: 50%;
+}
+
+.search-bar {
+  padding: 10px 20px;
+  margin: auto;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+i {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}
+
+ul {
+  margin-top: 10px;
+  list-style: none;
+}
+.item {
+  margin: 10px 0;
+  height: 100px;
+}
+
+.item div {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+
+.item div .image {
+  width: 150px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+p {
+  font-size: 1.2rem;
+}
