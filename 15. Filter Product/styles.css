@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-color: #ccc;
 }
 
@@ -45,10 +46,18 @@ input {
 ul {
   margin-top: 10px;
   list-style: none;
+  height: 500px;
+  overflow-y: scroll;
 }
 .item {
   margin: 10px 0;
-  height: 100px;
+  height: 120px;
+  padding: 10px;
+  position: relative;
+}
+
+.item:hover {
+  border: 1px solid black;
 }
 
 .item div {

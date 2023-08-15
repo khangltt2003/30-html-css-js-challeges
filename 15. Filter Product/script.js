@@ -5,10 +5,9 @@ const getData = async (word) => {
   const data = await fetch("https://fakestoreapi.com/products").then((res) =>
     res.json()
   );
-  filteredData = data.filter((item) => item.title.toLowerCase().includes(word));
+  filteredData = data.filter((item) => item.title.toLowerCase().includes(word)); //filter which item incluedes word
   updateUI(filteredData);
 };
-getData();
 
 const updateUI = (data) => {
   let content = "";
@@ -25,16 +24,16 @@ const updateUI = (data) => {
         <p class="product-name">
           ${e.title}
         </p>
-        <p class="product-price">${e.price}$</p>
+        <p class="product-price">$${e.price}</p>
       </div>
     </div>
   </li>`;
   });
-
   productList.innerHTML = content;
 };
 
+getData("");
+
 input.addEventListener("input", () => {
-  console.log(input.value);
   getData(input.value);
 });
